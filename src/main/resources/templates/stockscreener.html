@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Screener</title>
+    <style>
+        .center {
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <tr>
+        <td>
+            <h1 class="center" style="margin-top: 30vh;">Stock Screener</h1>
+        </td>
+    </tr>
+
+    <tr><div class="center" th:each="s : ${stock}">
+        <td>| 
+        Symbol: <span th:text="${s.symbol}"></span> |
+        Company: <span th:text="${s.companyName}"></span> |
+        Market Capitalization: <span th:text="${s.marketCap}"></span> |
+        Sector: <span th:text="${s.sector}"></span> |
+        Industry: <span th:text="${s.industry}"></span> |
+        Price: <span th:text="${s.price}"></span> |
+        Last Annual Dividend: <span th:text="${s.lastAnnualDividend}"></span> |
+        Volume: <span th:text="${s.volume}"></span> |
+        Exchange: <span th:text="${s.exchangeShortName}"></span> |
+        Country: <span th:text="${s.country}"></span> |
+        
+        </td>
+        <br><br>
+        
+    </div></tr>
+</body>
+</html>

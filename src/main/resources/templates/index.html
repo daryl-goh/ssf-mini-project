@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Head Out</title>
+    <title>Landing Page</title>
     <style>
         .center {
             width: 100vw;
-            display:flex;
+            display: flex;
             justify-content: center;
             align-items: center;
         }
@@ -16,25 +16,49 @@
 </head>
 <body>
     <div class="center" style="margin-top: 30vh;">
-        <h1>Traffic Image Search</h1>
+        <h1> Stock Screener </h1>
     </div>
-    <iframe class="center" width="600" height="400" src="https://data.gov.sg/dataset/traffic-images/resource/e127e29a-bd48-47e2-a0a7-e89ce31f10c7/view/39ba8de0-6242-40d3-8664-793316c47b09" frameBorder="0"> </iframe> 
-    
-    <br><br>
-    <form class="center" method="GET" action="/traffic">
-   <div>
-    <label for="date-time">Traffic at Date and Time (Format: YYYY-MM-DD[T]HH:mm:ss e.g. 2022-08-17T18:30:00)</label>
-    <br><br>
-    <input type="text" name="date_time" size ="20" placeholder="Input Time & Date " required>
-    <br><br>
-    
-    <!-- <label for="tsyms">To: </label>
-    <input type="text" name="tsyms" size ="20" placeholder="Input Currency" required>
-    <br><br> -->
-    
-     <button type="submit">Search</button>
-    </form></div>
 
+    <form class="center" method="GET" action="/stockscreener">
+   <div>
+    <label for="limit">Number of Companies: </label>
+    <input type="text" name="limit" size ="20" placeholder="Number of Companies" required>
+    <br><br>
+    
+    <label for="priceMoreThan">Price Above: </label>
+    <input type="text" name="priceMoreThan" size ="20" placeholder="Price Above">
+    <br><br>
+
+    <label for="priceLowerThan">Price Below: </label>
+    <input type="text" name="priceLowerThan" size ="20" placeholder="Price Below">
+    <br><br>
+
+    <label for="dividendMoreThan">Dividend Above: </label>
+    <input type="text" name="dividendMoreThan" size ="20" placeholder="Dividend Above">
+    <br><br>
+
+    <label for="dividendLowerThan">Dividend Below: </label>
+    <input type="text" name="dividendLowerThan" size ="20" placeholder="Dividend Below">
+    <br><br>
+
+    <label for="volumeMoreThan">Volume Above: </label>
+    <input type="text" name="volumeMoreThan" size ="20" placeholder="Volume Above">
+    <br><br>
+
+    <label for="volumeLowerThan">Volume Below: </label>
+    <input type="text" name="volumeLowerThan" size ="20" placeholder="Volume Below">
+    <br><br>
+
+    <label for="country">Country: </label>
+    <input type="text" name="country" size ="20" placeholder="Country" required>
+    <br><br>
+
+    <label for="exchange">Exchange: </label>
+    <input type="text" name="exchange" size ="20" placeholder="Exchange">
+    <br><br>
+    
+     <button type="submit">Screen</button>
+    </form></div>
     
 </body>
 </html>
