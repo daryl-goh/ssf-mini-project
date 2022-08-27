@@ -16,49 +16,20 @@
 </head>
 <body>
     <div class="center" style="margin-top: 30vh;">
-        <h1> Stock Screener </h1>
+        
+        <h2 th:text="${message}"></h2>
+        <br><br>
+
+    <a th:href="@{/stockscreener1}">Screen Stocks</a>
     </div>
 
-    <form class="center" method="GET" action="/stockscreener">
+    <!-- <form class="center" method="GET" action="/stocksearch">
    <div>
-    <label for="limit">Number of Companies: </label>
-    <input type="text" name="limit" size ="20" placeholder="Number of Companies" required>
-    <br><br>
     
-    <label for="priceMoreThan">Price Above: </label>
-    <input type="text" name="priceMoreThan" size ="20" placeholder="Price Above">
-    <br><br>
-
-    <label for="priceLowerThan">Price Below: </label>
-    <input type="text" name="priceLowerThan" size ="20" placeholder="Price Below">
-    <br><br>
-
-    <label for="dividendMoreThan">Dividend Above: </label>
-    <input type="text" name="dividendMoreThan" size ="20" placeholder="Dividend Above">
-    <br><br>
-
-    <label for="dividendLowerThan">Dividend Below: </label>
-    <input type="text" name="dividendLowerThan" size ="20" placeholder="Dividend Below">
-    <br><br>
-
-    <label for="volumeMoreThan">Volume Above: </label>
-    <input type="text" name="volumeMoreThan" size ="20" placeholder="Volume Above">
-    <br><br>
-
-    <label for="volumeLowerThan">Volume Below: </label>
-    <input type="text" name="volumeLowerThan" size ="20" placeholder="Volume Below">
-    <br><br>
-
-    <label for="country">Country: </label>
-    <input type="text" name="country" size ="20" placeholder="Country" required>
-    <br><br>
-
-    <label for="exchange">Exchange: </label>
-    <input type="text" name="exchange" size ="20" placeholder="Exchange">
-    <br><br>
     
-     <button type="submit">Screen</button>
+     <button type="submit">Stock Search</button>
     </form></div>
+     -->
     
 </body>
 </html>

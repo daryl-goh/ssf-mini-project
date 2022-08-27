@@ -3,6 +3,7 @@ package ssf.miniproject.ssfminiproject.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,13 +14,30 @@ import ssf.miniproject.ssfminiproject.models.Stock;
 import ssf.miniproject.ssfminiproject.services.StockService;
 
 @Controller
-@RequestMapping(path={"/", ""})
+@RequestMapping(path={"/", "/home", "/index"})
 public class StockController {
  
     @Autowired
     private StockService stockSvc;
 
-    @GetMapping(path={"/stockscreener"})
+    @Value("${welcome.message}")
+    private String message;
+
+    @GetMapping(value = { "/", "/home", "/index" })
+    public String index(Model model) {
+        model.addAttribute("message", message);
+
+        return "index";
+    }
+
+    @GetMapping(value = { "/stockscreener1" })
+    public String stocksearch(Model model) {
+        model.addAttribute("message", message);
+
+        return "stockscreener1";
+    }
+
+    @GetMapping(path={"/stockscreener2"})
         public String getStock(
             Model model, 
             @RequestParam(name="limit") String limit, 
@@ -37,6 +55,6 @@ public class StockController {
 
             model.addAttribute("stock", stock);
 
-            return "stockscreener";
+            return "stockscreener2";
     } 
 }
