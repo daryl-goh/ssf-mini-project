@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>Stock Screener</title>
     <style>
         .center {
@@ -16,7 +17,7 @@
 </head>
 <body>
     
-    <tr>
+    <!-- <tr>
         <td>
             <h1 class="center" style="margin-top: 30vh;">Stock Screener</h1>
         </td>
@@ -38,6 +39,108 @@
         </td>
         <br><br>
         
-    </div></tr>
+    </div></tr> -->
+
+
+
+    <!-- Navigation -->
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">Thymeleaf - Bootstrap Table</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 mt-5 mb-5">
+            <table class="table table-bordered" style="width: 100%">
+                <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Company</th>
+                    <th>Market Capitalization</th>
+                    <th>Sector</th>
+                    <th>Industry</th>
+                    <th>Price</th>
+                    <th>Last Annual Dividend</th>
+                    <th>Volume</th>
+                    <th>Exchange</th>
+                    <th>Country</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="s : ${stock}">
+                    <td th:text="${s.symbol}">Symbol</td>
+                    <td th:text="${s.companyName}">Company</td>
+                    <td th:text="${s.marketCap}">Market Capitalization</td>
+                    <td th:text="${s.sector}">Sector</td>
+                    <td th:text="${s.industry}">Industry</td>
+                    <!-- <td th:text="${#dates.format(employee.startDate, 'dd.MM.yyyy')}">Start date</td> -->
+                   
+                    <!-- <td th:text="${#numbers.formatDecimal(s.price, 0, 'COMMA', 2, 'POINT')}">Price</td>
+                    <td th:text="${#numbers.formatDecimal(s.lastAnnualDividend, 0, 'COMMA', 2, 'POINT')}">Last Annual Dividend</td> -->
+                    <td th:text="${s.price}">Price</td>
+                    <td th:text="${s.lastAnnualDividend}">Last Annual Dividend</td>
+                    <td th:text="${s.volume}">Volume</td>
+                    <td th:text="${s.exchangeShortName}">Exchange</td>
+                    <td th:text="${s.country}">Country</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- <nav aria-label="Page navigation" class="paging">
+                <ul class="pagination" th:if="${employees.page.totalPages > 1}">
+                    <li class="page-item" th:classappend="${!employees.paging.isPrevEnabled()? 'disabled' : ''}">
+                        <a class="page-link" th:href="@{'/?pageNumber=' + ${employees.paging.pageNumber - 1}}"
+                           tabindex="-1">Previous</a>
+                    </li>
+                    <th:block th:each="item : ${employees.paging.getItems()}">
+                        <li class="page-item" th:classappend="${item.index == employees.paging.pageNumber? 'active' : ''}"
+                            th:if="${item.pageItemType.name() == 'PAGE'}">
+                            <a class="page-link" th:href="@{'/?pageNumber=' + ${item.index}}"
+                               th:text="${item.index}"></a>
+                        </li>
+                        <li class="page-item disabled" th:if="${item.pageItemType.name() == 'DOTS'}">
+                            <a class="page-link" href="#">...</a>
+                        </li>
+                    </th:block>
+                    <li class="page-item" th:classappend="${!employees.paging.isNextEnabled()? 'disabled' : ''}">
+                        <a class="page-link" th:href="@{'/?pageNumber=' + ${employees.paging.pageNumber + 1}}">Next</a>
+                    </li>
+                </ul>
+            </nav> -->
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>
