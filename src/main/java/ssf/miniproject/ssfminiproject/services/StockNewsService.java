@@ -16,30 +16,22 @@ import jakarta.json.Json;
 import jakarta.json.JsonArray;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonReader;
-import ssf.miniproject.ssfminiproject.models.Stock;
+import ssf.miniproject.ssfminiproject.models.StockNews;
 
 @Service
-public class StockService {
+public class StockNewsService {
     
-    private static final String URL ="https://financialmodelingprep.com/api/v3/stock-screener";
+    private static final String URL ="https://financialmodelingprep.com/api/v3/stock_news";
 
     @Value("${API_KEY}")
     private String apikey;
 
-    public List<Stock> getStock(String limit, String priceMoreThan, String priceLowerThan, String dividendMoreThan, 
-    String dividendLowerThan, String volumeMoreThan, String volumeLowerThan, String country, String exchange) {
+    public List<StockNews> getStockNews(String tickers, Integer limit) {
         String payload;
 
         String url = UriComponentsBuilder.fromUriString(URL)
+            .queryParam("tickers", tickers)
             .queryParam("limit", limit)
-            .queryParam("priceMoreThan", priceMoreThan)
-            .queryParam("priceLowerThan", priceLowerThan)
-            .queryParam("dividendMoreThan ", dividendMoreThan )
-            .queryParam("dividendLowerThan ", dividendLowerThan )
-            .queryParam("volumeMoreThan", volumeMoreThan)
-            .queryParam("volumeLowerThan", volumeLowerThan)
-            .queryParam("country", country)
-            .queryParam("exchange", exchange)
             .queryParam("apikey", apikey)
             .toUriString();
 
@@ -55,15 +47,15 @@ public class StockService {
             Reader stringReader = new StringReader(payload);
             JsonReader jsonReader = Json.createReader(stringReader);
             JsonArray data = jsonReader.readArray();
- 
-            List<Stock> list = new ArrayList<>();
+
+            List<StockNews> list = new ArrayList<>();
             for (int i = 0; i < data.size(); i++) {
                 JsonObject jo = data.getJsonObject(i);
                 System.out.println("Json Object: " + jo);
-                list.add(Stock.create(jo));
+                list.add(StockNews.create(jo));
             }
 
-            // System.out.println("Stock Screener: " + list);
+            // System.out.println("Stock News: " + list);
             return list;
              
             
