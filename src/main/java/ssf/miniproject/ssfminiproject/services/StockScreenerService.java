@@ -16,17 +16,17 @@ import jakarta.json.Json;
 import jakarta.json.JsonArray;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonReader;
-import ssf.miniproject.ssfminiproject.models.Stock;
+import ssf.miniproject.ssfminiproject.models.StockScreener;
 
 @Service
-public class StockService {
+public class StockScreenerService {
     
     private static final String URL ="https://financialmodelingprep.com/api/v3/stock-screener";
 
     @Value("${API_KEY}")
     private String apikey;
 
-    public List<Stock> getStock(String limit, String priceMoreThan, String priceLowerThan, String dividendMoreThan, 
+    public List<StockScreener> getStock(String limit, String priceMoreThan, String priceLowerThan, String dividendMoreThan, 
     String dividendLowerThan, String volumeMoreThan, String volumeLowerThan, String country, String exchange) {
         String payload;
 
@@ -56,11 +56,11 @@ public class StockService {
             JsonReader jsonReader = Json.createReader(stringReader);
             JsonArray data = jsonReader.readArray();
  
-            List<Stock> list = new ArrayList<>();
+            List<StockScreener> list = new ArrayList<>();
             for (int i = 0; i < data.size(); i++) {
                 JsonObject jo = data.getJsonObject(i);
                 System.out.println("Json Object: " + jo);
-                list.add(Stock.create(jo));
+                list.add(StockScreener.create(jo));
             }
 
             // System.out.println("Stock Screener: " + list);

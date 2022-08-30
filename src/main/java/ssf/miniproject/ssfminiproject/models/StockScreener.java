@@ -4,7 +4,7 @@ import jakarta.json.Json;
 import jakarta.json.JsonNumber;
 import jakarta.json.JsonObject;
 
-public class Stock {
+public class StockScreener {
     
     private String symbol;
     private String companyName;
@@ -99,8 +99,8 @@ public class Stock {
         this.country = country;
     }
 
-    public static Stock create(JsonObject jo) {
-        Stock s = new Stock();
+    public static StockScreener create(JsonObject jo) {
+        StockScreener s = new StockScreener();
         s.setSymbol(jo.getString("symbol"));
         s.setCompanyName(jo.getString("companyName"));
         s.setMarketCap(jo.getInt("marketCap"));

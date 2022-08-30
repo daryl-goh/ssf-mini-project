@@ -2,6 +2,8 @@ package ssf.miniproject.ssfminiproject.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -31,7 +33,8 @@ public class StockNewsController {
     // }
 
     @GetMapping(value = { "/stocknews1" })
-    public String stocksearch(Model model) {
+    public String stocksearch(Model model, HttpSession sess) {
+        sess.setAttribute("message", message);
         model.addAttribute("message", message);
 
         return "stocknews1";
@@ -40,11 +43,13 @@ public class StockNewsController {
     @GetMapping(path={"/stocknews2"})
         public String getStockNews(
             Model model, 
+            HttpSession sess,
             @RequestParam(name="tickers") String tickers, 
             @RequestParam(name="limit") Integer limit) {
 
             List<StockNews> stock = stockNewsSvc.getStockNews(tickers, limit);
-
+            
+            sess.setAttribute("stock", stock);
             model.addAttribute("stock", stock);
 
             return "stocknews2";
