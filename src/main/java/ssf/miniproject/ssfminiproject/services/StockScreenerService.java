@@ -59,7 +59,7 @@ public class StockScreenerService {
             List<StockScreener> list = new ArrayList<>();
             for (int i = 0; i < data.size(); i++) {
                 JsonObject jo = data.getJsonObject(i);
-                System.out.println("Json Object: " + jo);
+                // System.out.println("Json Object: " + jo);
                 list.add(StockScreener.create(jo));
             }
 

@@ -16,8 +16,9 @@
     </style>
 </head>
 <body>
-    <form method="POST" action="/stockprice2">
+    <form method="POST" action="/news">
     <div class="container">
+        <button type="submit">Save</button>
 
       
                         
@@ -41,8 +42,8 @@
                     <tbody>
                     <tr th:each="s : ${stock}">
                         <td th:text="${s.symbol}">Symbol</td>
-                        <td>Check to save: <input type="checkbox" name="symbol" data-th-value="${s.symbol}" >
-                            <button type="submit">Save</button>
+                        <td> <input type="checkbox" name="symbol" data-th-value="${s.symbol}" >
+                            
                      </td>
                         <td th:text="${s.publishedDate}">Published Date</td>
                         <td th:text="${s.title}">Title</td>

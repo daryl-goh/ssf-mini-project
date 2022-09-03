@@ -51,7 +51,7 @@ public class StockNewsService {
             List<StockNews> list = new ArrayList<>();
             for (int i = 0; i < data.size(); i++) {
                 JsonObject jo = data.getJsonObject(i);
-                System.out.println("Json Object: " + jo);
+                // System.out.println("Json Object: " + jo);
                 list.add(StockNews.create(jo));
             }
 
@@ -59,6 +59,10 @@ public class StockNewsService {
             return list;
              
             
+    }
+
+    public StockNews getNewsBySymbol(String symbol) {
+        return null;
     } 
             
 }

@@ -1,7 +1,10 @@
 package ssf.miniproject.ssfminiproject.models;
 
+import java.io.StringReader;
+
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
+import jakarta.json.JsonReader;
 
 public class StockNews {
     private String symbol;
@@ -55,18 +58,25 @@ public class StockNews {
         this.url = url;
     }
 
-    public static StockNews create(JsonObject jo) {
+    public static StockNews create(JsonObject data) {
         StockNews sn = new StockNews();
-        sn.setSymbol(jo.getString("symbol"));
-        sn.setPublishedDate(jo.getString("publishedDate"));
-        sn.setTitle(jo.getString("title"));
-        sn.setImage(jo.getString("image"));
-        sn.setSite(jo.getString("site"));
-        sn.setText(jo.getString("text"));
-        sn.setUrl(jo.getString("url"));
+        sn.setSymbol(data.getString("symbol"));
+        sn.setPublishedDate(data.getString("publishedDate"));
+        sn.setTitle(data.getString("title"));
+        sn.setImage(data.getString("image"));
+        sn.setSite(data.getString("site"));
+        sn.setText(data.getString("text"));
+        sn.setUrl(data.getString("url"));
 
         return sn;
     }
+
+    public static StockNews create(String json) {
+		try (StringReader strReader = new StringReader(json)) {
+			JsonReader j = Json.createReader(strReader);
+			return create(j.readObject());
+		}
+	}
 
     public JsonObject toJson() {
         return Json.createObjectBuilder()
@@ -80,4 +90,5 @@ public class StockNews {
         .build();
     }
 
+    
 }

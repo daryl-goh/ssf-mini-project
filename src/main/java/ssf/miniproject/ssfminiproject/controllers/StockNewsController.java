@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ssf.miniproject.ssfminiproject.models.StockNews;
-import ssf.miniproject.ssfminiproject.models.StockPrice;
 import ssf.miniproject.ssfminiproject.services.StockNewsService;
 import ssf.miniproject.ssfminiproject.services.StockService;
 
@@ -49,13 +48,13 @@ public class StockNewsController {
 
         return "stocknews1";
     }
-
+    
     @GetMapping(path={"/stocknews2"})
         public String getStockNews(
             Model model, 
             HttpSession sess,
-            @RequestParam(name="tickers") String tickers, 
-            @RequestParam(name="limit") Integer limit) {
+            @RequestParam(name="tickers", required = false) String tickers, 
+            @RequestParam(name="limit", required = false, defaultValue = "5") Integer limit) {
 
             List<StockNews> stock = stockNewsSvc.getStockNews(tickers, limit);
             
@@ -65,39 +64,39 @@ public class StockNewsController {
             return "stocknews2";
     } 
 
-    // @PostMapping(path={"/stocknews2"})
-    // public String saveStock(@RequestBody MultiValueMap<String, String> form,
-    //         Model model,
-    //         @RequestParam(name="tickers") String tickers, 
-    //         @RequestParam(name="limit") Integer limit) {
+    @PostMapping(path={"/news"})
+    public String saveStock(@RequestBody MultiValueMap<String, String> form,
+            Model model,
+            @RequestParam(name="tickers", required = false) String tickers , 
+            @RequestParam(name="limit", required = false, defaultValue ="5") Integer limit) {
 
-    //         List<StockNews> stock = stockNewsSvc.getStockNews(tickers, limit);
+            List<StockNews> stock = stockNewsSvc.getStockNews(tickers, limit);
             
-    //         model.addAttribute("stock", stock);
+            model.addAttribute("stock", stock);
 
 
-    //         if (form == null) {
-    //             System.out.println("No news to save.");
-    //             return "stocknews2";
-    //         }
+            if (form == null) {
+                System.out.println("No news to save.");
+                return "stocknews2";
+            }
 
-    //         List<String> symbols = form.get("symbol");
+            List<String> symbols = form.get("symbol");
             
-    //         List<StockNews> newsToSave = new LinkedList<>();
-    //         for (String symbol: symbols){
-    //             System.out.println("StockNewsController - saveNews - symbol: " + symbol);
-    //             for (StockNews sp: stock) {
-    //                 if (symbol.equals(sp.getSymbol())){
-    //                     newsToSave.add(sp);
-    //                 }
-    //             }
-    //         }
+            List<StockNews> newsToSave = new LinkedList<>();
+            for (String symbol: symbols){
+                System.out.println("StockNewsController - saveNews - symbol: " + symbol);
+                for (StockNews sp: stock) {
+                    
+                        newsToSave.add(sp);
+                    
+                }
+            }
                             
-    //         System.out.println("StockNewsController: saveNews - newsToSave: " + newsToSave);
+            System.out.println("StockNewsController: saveNews - newsToSave: " + newsToSave);
 
-    //         stockSvc.saveStock(newsToSave);
+            stockSvc.saveStock(newsToSave);
             
-    //         return "stocknews2";
+            return "stocknews2";
                 
-    //         }
+            }
 }

@@ -22,20 +22,22 @@
     </div>
 
     <form class="center" method="GET" action="/stocknews2">
+        <button type="submit" class="btn btn-secondary">Search Random News</button>
+    </form>
    <div>
-    <form class="row g-3">
+    <form class="row g-3 center" method="GET" action="/stocknews2">
    
         <div class="col-12">
             <label for="tickers" class="form-label">Ticker: </label>
-            <input type="text" class="form-control" name="tickers" required>
+            <input type="text" class="form-control" name="tickers" >
         </div>
         <div class="col-12">
             <label for="limit" class="form-label">Number of Articles: </label>
-            <input type="text" class="form-control" name="limit" required>
+            <input type="text" class="form-control" name="limit" >
         </div>
      
 
-      <button type="submit" class="btn btn-secondary">Screen Stocks</button>
+      <button type="submit" class="btn btn-secondary">Search News</button>
     </form></div>
 </body>
 </html>
