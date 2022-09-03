@@ -22,6 +22,7 @@ public class StockPriceController {
     @Autowired
     private StockPriceService stockPriceSvc;
 
+
     @Value("${welcome.message}")
     private String message;
     
@@ -41,7 +42,7 @@ public class StockPriceController {
     }
 
     @GetMapping(path={"/stockprice2"})
-        public String getStockNews(
+    public String getStockNews(
             Model model, 
             HttpSession sess,
             @RequestParam(name="symbol") String symbol) {
@@ -53,4 +54,6 @@ public class StockPriceController {
 
             return "stockprice2";
     } 
+
+    
 }

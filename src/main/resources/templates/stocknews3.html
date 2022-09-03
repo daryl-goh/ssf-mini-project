@@ -16,19 +16,14 @@
     </style>
 </head>
 <body>
-    <form method="POST" action="/stockprice2">
+    <form method="POST" action="/stockprice3">
     <div class="container">
-
-      
-                        
-                    
         <div class="row">
             <div class="col-lg-10 mt-5 mb-5">
                 <table class="table table-bordered" style="width: 100%">
                     <thead>
                     <tr>
                         <th>Symbol</th>
-                        <th>Save</th>
                         <th>Published Date</th>
                         <th>Title</th>
                         <th>Image</th>
@@ -41,9 +36,6 @@
                     <tbody>
                     <tr th:each="s : ${stock}">
                         <td th:text="${s.symbol}">Symbol</td>
-                        <td>Check to save: <input type="checkbox" name="symbol" data-th-value="${s.symbol}" >
-                            <button type="submit">Save</button>
-                     </td>
                         <td th:text="${s.publishedDate}">Published Date</td>
                         <td th:text="${s.title}">Title</td>
                         <td><img width="300" height = "200" data-th-src="${s.image}" ></td>
@@ -56,13 +48,15 @@
                         <td><a th:href="@{''+${s.url}}">View Article Here</a></td>
                         <!-- <td th:text="${s.url}">URL</td> -->
                         
-                        
+                        <div>
+                            Check to save: <input type="checkbox" name="symbol" data-th-value="${s.symbol}" >
+                            <button type="submit">Save</button>
+                        </div>
                     </tr>
-                    
                     </tbody>
-                    
                 </table>
-                
+    
+         
             </div>
         </div>
     </div>

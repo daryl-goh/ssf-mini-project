@@ -46,6 +46,7 @@ public class StockPriceService {
             JsonObject data = jsonReader.readObject();
            
             JsonObject data2 = data.getJsonObject("profile");
+            
 
             List<JsonObject> list = new LinkedList<>();
             list.add(data2);

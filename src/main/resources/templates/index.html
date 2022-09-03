@@ -17,7 +17,19 @@
     </style>
 </head>
 <body>
-    <div class="center" style="margin-top: 30vh;">
+    <div class="center" style="margin-top: 20vh;">
+       
+        <div>Hello there, <h1 data-th-text="${hello}"></h1>
+        
+            Welcome to your Personal Stock App!
+        <br><br>
+            Choose what you like to do today:    
+        </div>
+        
+
+        
+
+        <br><br>
         
         <h2 th:text="${message}"></h2>
     </div>
@@ -45,6 +57,19 @@
     <a th:href="@{/stockprice1}" class="btn btn-secondary btn-lg">Check Stock Price</a>
 
     </div>
+
+    <br><br><br><br>
+
+    <div class="center" style="margin-top: 0vh;"><form method="POST" action="/">
+            
+                    
+                        <input type="text" name="text" size="40" placeholder="Update Your Name Here" required>
+             
+                     <button type="submit">Update</button> 
+                
+
+        </form></div>
+        
 
     <!-- <form class="center" method="GET" action="/stocksearch">
    <div>
