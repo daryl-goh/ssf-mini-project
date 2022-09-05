@@ -99,4 +99,20 @@ public class StockNewsController {
             return "stocknews2";
                 
             }
+
+            @GetMapping(path={"/stocknews3"})
+            public String getStockNews2(
+                Model model, 
+                HttpSession sess,
+                @RequestParam(name="tickers", required = false) String tickers, 
+                @RequestParam(name="limit", required = false, defaultValue = "5") Integer limit) {
+    
+                List<StockNews> stock = stockNewsSvc.getStockNews2(tickers, limit);
+                
+                sess.setAttribute("stock", stock);
+                model.addAttribute("stock", stock);
+    
+                return "stocknews3";
+        } 
+
 }

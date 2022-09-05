@@ -16,8 +16,13 @@
     </style>
 </head>
 <body>
-    <form method="POST" action="/stockprice3">
+    <form method="POST" action="/news">
     <div class="container">
+        <!-- <button type="submit">Save</button> -->
+
+      
+                        
+                    
         <div class="row">
             <div class="col-lg-10 mt-5 mb-5">
                 <table class="table table-bordered" style="width: 100%">
@@ -48,15 +53,13 @@
                         <td><a th:href="@{''+${s.url}}">View Article Here</a></td>
                         <!-- <td th:text="${s.url}">URL</td> -->
                         
-                        <div>
-                            Check to save: <input type="checkbox" name="symbol" data-th-value="${s.symbol}" >
-                            <button type="submit">Save</button>
-                        </div>
+                        
                     </tr>
+                    
                     </tbody>
+                    
                 </table>
-    
-         
+                
             </div>
         </div>
     </div>

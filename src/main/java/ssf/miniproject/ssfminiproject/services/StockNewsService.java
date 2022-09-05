@@ -57,8 +57,39 @@ public class StockNewsService {
 
             // System.out.println("Stock News: " + list);
             return list;
-             
-            
+    }
+
+    public List<StockNews> getStockNews2(String tickers, Integer limit) {
+        String payload;
+
+        String url = UriComponentsBuilder.fromUriString(URL)
+            .queryParam("tickers", tickers)
+            .queryParam("limit", limit)
+            .queryParam("apikey", apikey)
+            .toUriString();
+
+            RequestEntity<Void> req = RequestEntity.get(url).build();
+
+            RestTemplate template = new RestTemplate();
+
+            ResponseEntity<String> resp = template.exchange(req, String.class);
+
+            payload = resp.getBody();
+            System.out.println("payload: " + payload);
+
+            Reader stringReader = new StringReader(payload);
+            JsonReader jsonReader = Json.createReader(stringReader);
+            JsonArray data = jsonReader.readArray();
+
+            List<StockNews> list = new ArrayList<>();
+            for (int i = 0; i < data.size(); i++) {
+                JsonObject jo = data.getJsonObject(i);
+                // System.out.println("Json Object: " + jo);
+                list.add(StockNews.create(jo));
+            }
+
+            // System.out.println("Stock News: " + list);
+            return list;
     }
 
     public StockNews getNewsBySymbol(String symbol) {

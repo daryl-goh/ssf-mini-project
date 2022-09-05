@@ -18,33 +18,37 @@
 <body>
     <form method="POST" action="/news">
     <div class="container">
-        <button type="submit">Save</button>
+        
 
-      
+        <!-- <tr th:each="s : ${stock}">
+            
+            <td> <button type="submit" name="symbol" data-th-value="${s.symbol}">Save</button>
+                
+         </td></tr> -->
                         
-                    
+         <tr>           
         <div class="row">
             <div class="col-lg-10 mt-5 mb-5">
                 <table class="table table-bordered" style="width: 100%">
                     <thead>
                     <tr>
                         <th>Symbol</th>
-                        <th>Save</th>
                         <th>Published Date</th>
                         <th>Title</th>
                         <th>Image</th>
                         <th>Site</th>
                         <th>Text</th>
                         <th>URL</th>
+                        <th>Save</th>
                    
                     </tr>
                     </thead>
                     <tbody>
                     <tr th:each="s : ${stock}">
                         <td th:text="${s.symbol}">Symbol</td>
-                        <td> <input type="checkbox" name="symbol" data-th-value="${s.symbol}" >
+                        <!-- <td> <input type="checkbox" name="symbol" data-th-value="${s.symbol}" >
                             
-                     </td>
+                     </td> -->
                         <td th:text="${s.publishedDate}">Published Date</td>
                         <td th:text="${s.title}">Title</td>
                         <td><img width="300" height = "200" data-th-src="${s.image}" ></td>
@@ -55,9 +59,7 @@
                         <td th:text="${#numbers.formatDecimal(s.lastAnnualDividend, 0, 'COMMA', 2, 'POINT')}">Last Annual Dividend</td> -->
                         <td th:text="${s.text}">Text</td>
                         <td><a th:href="@{''+${s.url}}">View Article Here</a></td>
-                        <!-- <td th:text="${s.url}">URL</td> -->
-                        
-                        
+                        <td> <button type="submit" name="symbol" data-th-value="${s.symbol}">Save</button></td>
                     </tr>
                     
                     </tbody>
