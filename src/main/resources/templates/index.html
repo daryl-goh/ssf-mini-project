@@ -48,7 +48,7 @@
 
 
 
-      <div class="center" style="margin-top: 20vh;">
+      <div class="center" style="margin-top: 10vh;">
        
         <div><h1 data-th-text="${hello}"></h1>
         
@@ -67,31 +67,47 @@
 
         
         <div class="card">
-          <img src="..." class="card-img-top" alt="...">
+          
+          <img src="Card1.jpg" class="card-img-top" alt="Card1" width="" height="300">
+          
+          <div class="card-img-overlay">
+            <a th:href="@{/stockscreener1}" class="btn btn-primary">Screen Stocks</a>
+          </div>
+          
           <div class="card-body">
             <h5 class="card-title">Stock Screener</h5>
             <p class="card-text">A stock screener is a search tool that helps investors find stocks that meet certain requirements. 
               Our stock screener allows investors to search and find stocks based on price, dividend, volume and more. </p>
             <p class="card-text"><small class="text-muted">"Screeners are great for narrowing your list of potential stocks to invest in."</small></p>
-            <a th:href="@{/stockscreener1}" class="btn btn-secondary btn-lg">Screen Stocks</a>
+            
           </div>
         </div>
         <div class="card">
-          <img src="..." class="card-img-top" alt="...">
+          <img src="Card2.jpg" class="card-img-top" alt="Card2" width="" height="300">
+
+          <div class="card-img-overlay">
+            <a th:href="@{/stocknews1}" class="btn btn-primary">Read Stock News</a>
+          </div>
+
           <div class="card-body">
             <h5 class="card-title">Stock News</h5>
             <p class="card-text">We provide the latest stock market, financial and business news. Search by ticker and limit how many articles you wish to view.</p>
             <p class="card-text"><small class="text-muted">"Get up to date with what's going on in the markets before making your next investment."</small></p>
-            <a th:href="@{/stocknews1}" class="btn btn-secondary btn-lg">Read Stock News</a>
+            
           </div>
         </div>
         <div class="card">
-          <img src="..." class="card-img-top" alt="...">
+          <img src="Card3.jpg" class="card-img-top" alt="Card3" width="" height="300">
+
+          <div class="card-img-overlay">
+            <a th:href="@{/stockprice1}" class="btn btn-primary">Check Stock Price</a>
+          </div>
+
           <div class="card-body">
             <h5 class="card-title">Stock Price</h5>
             <p class="card-text">Find information on all public companies in major exchanges like NYSE, NASDAQ and more.</p>
             <p class="card-text"><small class="text-muted">"Research your favourite companies."</small></p>
-            <a th:href="@{/stockprice1}" class="btn btn-secondary btn-lg">Check Stock Price</a>
+            
           </div>
         </div>
       </div>
