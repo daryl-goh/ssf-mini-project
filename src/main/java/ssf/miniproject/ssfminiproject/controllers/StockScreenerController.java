@@ -50,6 +50,8 @@ public class StockScreenerController {
             @RequestParam(name="limit") String limit, 
             @RequestParam(name="priceMoreThan") String priceMoreThan, 
             @RequestParam(name="priceLowerThan") String priceLowerThan,
+            @RequestParam(name="betaMoreThan") String betaMoreThan, 
+            @RequestParam(name="betaLowerThan") String betaLowerThan,
             @RequestParam(name="dividendMoreThan") String dividendMoreThan, 
             @RequestParam(name="dividendLowerThan") String dividendLowerThan,
             @RequestParam(name="volumeMoreThan") String volumeMoreThan,
@@ -57,7 +59,7 @@ public class StockScreenerController {
             @RequestParam(name="country") String country, 
             @RequestParam(name="exchange") String exchange) {
 
-            List<StockScreener> stock = stockSvc.getStock(limit, priceMoreThan, priceLowerThan, dividendMoreThan, dividendLowerThan,
+            List<StockScreener> stock = stockSvc.getStock(limit, priceMoreThan, priceLowerThan, betaMoreThan, betaLowerThan, dividendMoreThan, dividendLowerThan,
             volumeMoreThan, volumeLowerThan, country, exchange);
 
             sess.setAttribute("stock", stock);

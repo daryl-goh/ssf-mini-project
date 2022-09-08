@@ -48,101 +48,105 @@
     <div class="center" style="margin-top: 10vh;">
         <h1> Stock Screener </h1>
     </div>
-
+    <br>
     <form class="center" method="GET" action="/stockscreener2">
    <div>
-    <!-- <label for="limit">Number of Companies: </label>
-    <input type="text" name="limit" size ="20" placeholder="Number of Companies" > -->
-    <!-- <br><br>
-    
-    <label for="priceMoreThan">Price Above: </label>
-    <input type="text" name="priceMoreThan" size ="20" placeholder="Price Above">
-    <br><br>
+     <form class="row g-3">
 
-    <label for="priceLowerThan">Price Below: </label>
-    <input type="text" name="priceLowerThan" size ="20" placeholder="Price Below">
-    <br><br>
-
-    <label for="dividendMoreThan">Dividend Above: </label>
-    <input type="text" name="dividendMoreThan" size ="20" placeholder="Dividend Above">
-    <br><br>
-
-    <label for="dividendLowerThan">Dividend Below: </label>
-    <input type="text" name="dividendLowerThan" size ="20" placeholder="Dividend Below">
-    <br><br>
-
-    <label for="volumeMoreThan">Volume Above: </label>
-    <input type="text" name="volumeMoreThan" size ="20" placeholder="Volume Above">
-    <br><br>
-
-    <label for="volumeLowerThan">Volume Below: </label>
-    <input type="text" name="volumeLowerThan" size ="20" placeholder="Volume Below">
-    <br><br>
-
-    <label for="country">Country: </label>
-    <input type="text" name="country" size ="20" placeholder="Country" required>
-    <br><br>
-
-    <label for="exchange">Exchange: </label>
-    <input type="text" name="exchange" size ="20" placeholder="Exchange">
-    <br><br> -->
-    
-    
-     
-
-    <form class="row g-3">
-   
-        <div class="col-12">
-            <label for="limit" class="form-label">Number of Companies: </label>
-            <input type="text" class="form-control" name="limit" required>
-        </div>
-        <div class="col-12">
-            <label for="priceMoreThan" class="form-label">Price Above: </label>
-            <input type="text" class="form-control" name="priceMoreThan">
-        </div>
-        <div class="col-12">
-            <label for="priceLowerThan" class="form-label">Price Below: </label>
-            <input type="text" class="form-control" name="priceLowerThan">
-        </div>
-        <div class="col-12">
-            <label for="dividendMoreThan" class="form-label">Dividend Above: </label>
-            <input type="text" class="form-control" name="dividendMoreThan">
-        </div>
-        <div class="col-12">
-            <label for="dividendLowerThan" class="form-label">Dividend Below: </label>
-            <input type="text" class="form-control" name="dividendLowerThan">
-        </div>
-        <div class="col-12">
-            <label for="volumeMoreThan" class="form-label">Volume Above: </label>
-            <input type="text" class="form-control" name="volumeMoreThan">
-        </div>
-        <div class="col-12">
-            <label for="volumeLowerThan" class="form-label">Volume Below: </label>
-            <input type="text" class="form-control" name="volumeLowerThan">
-        </div>
-        <div class="col-12">
-            <label for="country" class="form-label">Country: </label>
-            <input type="text" class="form-control" name="country"  required>
-        </div>
-        <div class="col-12">
-            <label for="exchange" class="form-label">Exchange: </label>
-            <input type="text" class="form-control" name="exchange" required>
-        </div>
-
-
-        <!-- <div class="col-12">
-          <label for="inputState" class="form-label">State</label>
-          <select id="inputState" class="form-select">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
-        </div> -->
-       
       
+   
+        <div class="col-12 form-floating">
+            <label for="limit" class="form-label"></label>
+            <input type="text" class="form-control" name="limit" required>
+            <label for="floatingInputGrid">Number of Companies</label>
+        </div>
+        <br>
+        <div class="row g-2">
+          <div class="col-md form-floating">
+              <label for="priceMoreThan" class="form-label"></label>
+              <input type="text" class="form-control" name="priceMoreThan">
+              <label for="floatingInputGrid">Price Above</label>
+          </div>
+          <div class="col-md form-floating">
+              <label for="priceLowerThan" class="form-label"></label>
+              <input type="text" class="form-control" name="priceLowerThan">
+              <label for="floatingInputGrid">Price Below</label>
+          </div>
+        </div>
+          <br>
+          <div class="row g-2">
+            <div class="col-md form-floating">
+              <label for="betaMoreThan" class="form-label"></label>
+              <input type="text" class="form-control" name="betaMoreThan">
+              <label for="floatingInputGrid">Beta Above</label>
+            </div>
+            <div class="col-md form-floating">
+              <label for="betaLowerThan" class="form-label"></label>
+              <input type="text" class="form-control" name="betaLowerThan">
+              <label for="floatingInputGrid">Beta Below</label>
+            </div>
+            </div>
+            <br>
+          <div class="row g-2">
+            <div class="col-md form-floating">
+                <label for="dividendMoreThan" class="form-label"></label>
+                <input type="text" class="form-control" name="dividendMoreThan">
+                <label for="floatingInputGrid">Dividend Above</label>
+            </div>
+            <div class="col-md form-floating">
+                <label for="dividendLowerThan" class="form-label"> </label>
+                <input type="text" class="form-control" name="dividendLowerThan">
+                <label for="floatingInputGrid">Dividend Below</label>
+            </div>
+          </div>
+          <br>
 
+          <div class="row g-2">
+            <div class="col-md form-floating">
+                <label for="volumeMoreThan" class="form-label"></label>
+                <input type="text" class="form-control" name="volumeMoreThan">
+                <label for="floatingInputGrid">Volume Above</label>
+            </div>
+            <div class="col-md form-floating">
+                <label for="volumeLowerThan" class="form-label"></label>
+                <input type="text" class="form-control" name="volumeLowerThan">
+                <label for="floatingInputGrid">Volume Below</label>
+            </div>
+          </div>
 
-      <button type="submit" class="btn btn-secondary">Screen Stocks</button>
+          <br>
+     
+          <div class="col-12">
+            <label class="visually-hidden" for="inlineFormSelectPref">Country</label>
+            <select class="form-select" id="inlineFormSelectPref" name="country">
+              <option selected>Country</option>
+              <option value="CA">CA</option>
+              <option value="HK">HK</option>
+              <option value="GB">GB</option>
+              <option value="TH">TH</option>
+              <option value="US">US</option>
+            </select>
+          </div>
+
+          <br>
+
+          <div class="col-12">
+            <label class="visually-hidden" for="inlineFormSelectPref">Exchange</label>
+            <select class="form-select" id="inlineFormSelectPref" name="exchange">
+              <option selected>Stock Exchange</option>
+              <option value="HKSE">HKSE</option>
+              <option value="LSE">LSE</option>
+              <option value="NASDAQ">NASDAQ</option>
+              <option value="NYSE">NYSE</option>
+              <option value="SET">SET</option>
+              <option value="TSX">TSX</option>
+            </select>
+          </div>
+
+          <br><br>
+      
+      <button type="submit" class="btn btn-primary">Screen Stocks</button>
     </form></div>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>

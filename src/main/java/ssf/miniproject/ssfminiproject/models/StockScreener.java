@@ -11,14 +11,14 @@ public class StockScreener {
     private Integer marketCap;
     private String sector;
     private String industry;
+    private JsonNumber beta;
     private JsonNumber price;
     private JsonNumber lastAnnualDividend;
     private Integer volume;
     private String exchangeShortName;
     private String country;
 
-    
-
+       
     public String getSymbol() {
         return symbol;
     }
@@ -57,6 +57,14 @@ public class StockScreener {
 
     public void setIndustry(String industry) {
         this.industry = industry;
+    }
+
+    public JsonNumber getBeta() {
+        return beta;
+    }
+
+    public void setBeta(JsonNumber beta) {
+        this.beta = beta;
     }
 
     public JsonNumber getPrice() {
@@ -106,6 +114,7 @@ public class StockScreener {
         s.setMarketCap(jo.getInt("marketCap"));
         s.setSector(jo.getString("sector"));
         s.setIndustry(jo.getString("industry"));
+        s.setBeta(jo.getJsonNumber("beta"));
         s.setPrice(jo.getJsonNumber("price"));
         s.setLastAnnualDividend(jo.getJsonNumber("lastAnnualDividend"));
         s.setVolume(jo.getInt("volume"));
@@ -122,6 +131,7 @@ public class StockScreener {
         .add("marketCap", marketCap)
         .add("sector", sector)
         .add("industry", industry)
+        .add("beta", beta)
         .add("price", price)
         .add("lastAnnualDividend", lastAnnualDividend)
         .add("volume", volume)
@@ -129,6 +139,8 @@ public class StockScreener {
         .add("country", country)
         .build();
     }
+
+    
 
    
 }

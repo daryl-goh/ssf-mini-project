@@ -44,67 +44,10 @@
         </div>
       </nav>
 
-    
-    <!-- <tr>
-        <td>
-            <h1 class="center" style="margin-top: 30vh;">Stock Screener</h1>
-        </td>
-    </tr>
-
-    <tr><div class="center" th:each="s : ${stock}">
-        <td>| 
-        Symbol: <span th:text="${s.symbol}"></span> |
-        Company: <span th:text="${s.companyName}"></span> |
-        Market Capitalization: <span th:text="${s.marketCap}"></span> |
-        Sector: <span th:text="${s.sector}"></span> |
-        Industry: <span th:text="${s.industry}"></span> |
-        Price: <span th:text="${s.price}"></span> |
-        Last Annual Dividend: <span th:text="${s.lastAnnualDividend}"></span> |
-        Volume: <span th:text="${s.volume}"></span> |
-        Exchange: <span th:text="${s.exchangeShortName}"></span> |
-        Country: <span th:text="${s.country}"></span> |
-        
-        </td>
-        <br><br>
-        
-    </div></tr> -->
-
-
-
-    <!-- Navigation -->
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">Thymeleaf - Bootstrap Table</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav> -->
-
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-lg-10 mt-5 mb-5">
-            <table class="table table-bordered" style="width: 100%">
+            <table class="table table-striped table-hover table-responsive" style="width: 100%">
                 <thead>
                 <tr>
                     <th>Symbol</th>
@@ -112,6 +55,7 @@
                     <th>Market Capitalization</th>
                     <th>Sector</th>
                     <th>Industry</th>
+                    <th>Beta</th>
                     <th>Price</th>
                     <th>Last Annual Dividend</th>
                     <th>Volume</th>
@@ -126,6 +70,7 @@
                     <td th:text="${s.marketCap}">Market Capitalization</td>
                     <td th:text="${s.sector}">Sector</td>
                     <td th:text="${s.industry}">Industry</td>
+                    <td th:text="${s.beta}">Beta</td>
                     <!-- <td th:text="${#dates.format(employee.startDate, 'dd.MM.yyyy')}">Start date</td> -->
                    
                     <!-- <td th:text="${#numbers.formatDecimal(s.price, 0, 'COMMA', 2, 'POINT')}">Price</td>
