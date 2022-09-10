@@ -43,28 +43,46 @@
           </div>
         </div>
       </nav>
+
     
     <div class="center" style="margin-top: 20vh;">
         <h1> Stock News </h1>
     </div>
 
     <form class="center" method="GET" action="/stocknews2">
-        <button type="submit" class="btn btn-secondary">News of the Day</button>
+        <button type="submit" class="btn btn-primary">News of the Day</button>
     </form>
-   <div>
-    <form class="row g-3" method="GET" action="/stocknews3">
+    <br><br>
+
+    
    
-        <div class="col-12">
+    <form class="center" method="GET" action="/stocknews3">
+      <div>
+      <form class="row g-3">
+      <div class="col-12 form-floating">
+        <label for="tickers" class="form-label"></label>
+        <input type="text" class="form-control" name="tickers" required>
+        <label for="floatingInputGrid">Tickers: </label>
+      </div>
+
+      <br>
+      <div class="col-12 form-floating">
+        <label for="limit" class="form-label"></label>
+        <input type="text" class="form-control" name="limit" required>
+        <label for="floatingInputGrid">Limit: </label>
+      </div>
+   
+        <!-- <div class="col-12">
             <label for="tickers" class="form-label">Ticker: </label>
             <input type="text" class="form-control" name="tickers" required>
-        </div>
-        <div class="col-12">
+        </div> -->
+        <!-- <div class="col-12">
             <label for="limit" class="form-label">Number of Articles: </label>
             <input type="text" class="form-control" name="limit" required>
         </div>
-     
-
-      <button type="submit" class="btn btn-secondary">Search News</button>
+      -->
+      <br>
+      <button type="submit" class="btn btn-primary">Search News</button>
     </form></div>
 </body>
 </html>
