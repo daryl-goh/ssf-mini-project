@@ -27,7 +27,8 @@ public class GreetingsController {
         model.addAttribute("hello", greetings.toString());
         return "index";
     }
-
+    
+    //Update Name Page Controller
     @GetMapping(path={"/updatename"})
     public String updateName(Model model) {
         ValueOperations<String, String> ops = redisTemplate.opsForValue();
@@ -43,5 +44,13 @@ public class GreetingsController {
         ops.set("greetings", text);
         model.addAttribute("hello", text);
         return "index";
+    }
+
+
+    //About Us Page Controller    
+    @GetMapping(path={"/aboutus"})
+    public String aboutUs(Model model) {
+        
+        return "aboutus";
     }
 }
