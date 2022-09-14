@@ -14,6 +14,86 @@
             justify-content: center;
             align-items: center;
         }
+        
+        #hero {
+          width: 100%;
+          height: calc(100vh - 110px);
+          background: url("HomeIndex.jpg") top center;
+          background-size: cover;
+          position: relative;
+        }
+
+        #hero:before {
+          content: "";
+          background: rgba(0, 0, 0, 0.5);
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          left: 0;
+          right: 0;
+        }
+
+        #hero h1 {
+          margin: 0 0 10px 0;
+          font-size: 48px;
+          font-weight: 700;
+          line-height: 56px;
+          text-transform: uppercase;
+          color: #fff;
+        }
+
+        #hero h2 {
+          color: #eee;
+          margin-bottom: 30px;
+          font-size: 24px;
+        }
+
+        #hero .btn-get-started {
+          font-family: "Raleway", sans-serif;
+          text-transform: uppercase;
+          font-weight: 500;
+          font-size: 14px;
+          letter-spacing: 0.5px;
+          display: inline-block;
+          padding: 10px 28px;
+          transition: 0.5s;
+          border: 2px solid #fff;
+          color: #fff;
+        }
+
+        #hero .btn-get-started:hover {
+          background: #3df173;
+          border-color: #3df173;
+        }
+
+        @media (min-width: 1024px) {
+          #hero {
+            background-attachment: fixed;
+          }
+        }
+
+        @media (max-width: 768px) {
+          #hero {
+            text-align: center;
+          }
+
+          #hero .container {
+            padding-top: 40px;
+          }
+
+          #hero h1 {
+            font-size: 28px;
+            line-height: 36px;
+          }
+
+          #hero h2 {
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 30px;
+          }
+        }
+
+
     </style>
 </head>
 <body>
@@ -48,20 +128,22 @@
 
 
 
+      <section id="hero" class="d-flex align-items-center">
+        <!-- <img src="HomeIndex.jpg " class="" alt="HomeIndex" width="" height=""> -->
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+          <h1>Welcome to Stockify</h1>
+          <h2>Stockify is the best way to find out what is happening right now around the markets, companies and assets you care about.</h2>
+          <a href="#services" class="btn-get-started scrollto">Get Started</a>
+          
+        </div>
+      </section>
+
       <div class="center" style="margin-top: 5vh;">
        
         <div><h1 data-th-text="${hello}"></h1>
         <br><br>
 
-        <p class="blockquote">
-          Welcome to Stockify.
-        </p>
-            
-       
-        <p class="lead">
-          Choose what you like to do today:
-        </p>
-                
+      
         </div>
      
         
@@ -69,7 +151,7 @@
     </div>
 
         <br><br>
-
+      <section id="services" class="services">
       <div class="card-group">
 
         
@@ -81,7 +163,7 @@
             <a th:href="@{/stockscreener1}" class="btn btn-primary">Screen Stocks</a>
           </div>
           
-          <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
+          <div class="card-body ">
             <h5 class="card-title">Stock Screener</h5>
             <p class="card-text">A stock screener is a search tool that helps investors find stocks that meet certain requirements. 
               Our stock screener allows investors to search and find stocks based on price, dividend, volume and more. </p>
@@ -96,7 +178,7 @@
             <a th:href="@{/stocknews1}" class="btn btn-primary">Read Stock News</a>
           </div>
 
-          <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
+          <div class="card-body">
             <h5 class="card-title">Stock News</h5>
             <p class="card-text">We provide the latest stock market, financial and business news. Search by ticker and limit how many articles you wish to view.</p>
             <p class="card-text"><small class="text-muted">"Get up to date with what's going on in the markets before making your next investment."</small></p>
@@ -110,7 +192,7 @@
             <a th:href="@{/stockprice1}" class="btn btn-primary">Check Stock Price</a>
           </div>
 
-          <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
+          <div class="card-body">
             <h5 class="card-title">Stock Price</h5>
             <p class="card-text">Find information on all public companies in major exchanges like NYSE, NASDAQ and more.</p>
             <p class="card-text"><small class="text-muted">"Research your favourite companies."</small></p>
@@ -118,7 +200,7 @@
           </div>
         </div>
       </div>
-      
+    </section>
       
     <!-- <div class="center" style="margin-top: 20vh;">
        
