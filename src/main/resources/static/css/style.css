@@ -5,7 +5,9 @@
     align-items: center;
 }
 
-#hero {
+/* Intro Section */
+
+#intro {
   width: 100%;
   height: calc(100vh - 110px);
   background: url("/images/HomeIndex.jpg") top center;
@@ -13,7 +15,7 @@
   position: relative;
 }
 
-#hero:before {
+#intro:before {
   content: "";
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -23,7 +25,7 @@
   right: 0;
 }
 
-#hero h1 {
+#intro h1 {
   margin: 0 0 10px 0;
   font-size: 48px;
   font-weight: 700;
@@ -32,13 +34,13 @@
   color: #fff;
 }
 
-#hero h2 {
+#intro h2 {
   color: #eee;
   margin-bottom: 30px;
   font-size: 24px;
 }
 
-#hero .btn-get-started {
+#intro .btn-get-started {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
@@ -51,57 +53,62 @@
   color: #fff;
 }
 
-#hero .btn-get-started:hover {
+#intro .btn-get-started:hover {
   background: #3df173;
   border-color: #3df173;
 }
 
 @media (min-width: 1024px) {
 
-#hero {
+#intro {
     background-attachment: fixed;
 }
 }
 
 @media (max-width: 768px) {
-#hero {
+#intro {
     text-align: center;
 }
 
-#hero .container {
+#intro .container {
     padding-top: 40px;
 }
 
-#hero h1 {
+#intro h1 {
     font-size: 28px;
     line-height: 36px;
 }
 
-#hero h2 {
+#intro h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
 }
 }
 
-.why-us {
+/* End of Intro Section */
+
+
+/* Services Section */
+
+.services {
     padding-top: 10px;
   }
 
-.why-us .box {
+.services .box {
 padding: 50px 30px;
 box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 transition: all ease-in-out 0.3s;
 }
 
-.why-us .box span {
+.services .box span {
 display: block;
 font-size: 28px;
 font-weight: 700;
 color: #ed5b5b;
 }
 
-.why-us .box h4 {
+.services .box h4 {
 font-size: 24px;
 font-weight: 600;
 padding: 0;
@@ -109,21 +116,23 @@ margin: 20px 0;
 color: #191919;
 }
 
-.why-us .box p {
+.services .box p {
 color: #aaaaaa;
 font-size: 15px;
 margin: 0;
 padding: 0;
 }
 
-.why-us .box:hover {
+.services .box:hover {
 background: #cc1616;
 padding: 30px 30px 70px 30px;
 box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
 }
 
-.why-us .box:hover span,
-.why-us .box:hover h4,
-.why-us .box:hover p {
+.services .box:hover span,
+.services .box:hover h4,
+.services .box:hover p {
 color: #fff;
 }
+
+/* End of Services Section  */
