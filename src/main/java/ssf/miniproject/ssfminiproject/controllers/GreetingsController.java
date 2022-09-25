@@ -1,7 +1,10 @@
 package ssf.miniproject.ssfminiproject.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Controller;
@@ -20,10 +23,14 @@ public class GreetingsController {
     @Qualifier("redislab")
     private RedisTemplate<String, String> redisTemplate;
 
+    @Value("${welcome.message}")
+    private String message;
+
     @GetMapping
-    public String getGreetings(Model model) {
+    public String getGreetings(Model model, HttpSession sess) {
         ValueOperations<String, String> ops = redisTemplate.opsForValue();
         Object greetings = ops.get("greetings");
+        sess.setAttribute("message", message);
         model.addAttribute("hello", greetings.toString());
         return "index";
     }
