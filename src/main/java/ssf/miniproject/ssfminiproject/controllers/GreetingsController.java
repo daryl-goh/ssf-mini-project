@@ -35,14 +35,14 @@ public class GreetingsController {
         return "index";
     }
     
-    //Update Name Page Controller
-    @GetMapping(path={"/updatename"})
-    public String updateName(Model model) {
-        ValueOperations<String, String> ops = redisTemplate.opsForValue();
-        Object greetings = ops.get("greetings");
-        model.addAttribute("hello", greetings.toString());
-        return "updatename";
-    }
+    // //Update Name Page Controller
+    // @GetMapping(path={"/updatename"})
+    // public String updateName(Model model) {
+    //     ValueOperations<String, String> ops = redisTemplate.opsForValue();
+    //     Object greetings = ops.get("greetings");
+    //     model.addAttribute("hello", greetings.toString());
+    //     return "updatename";
+    // }
 
     @PostMapping(path={"/"})
     public String postGreetings(@RequestBody MultiValueMap<String, String> form, Model model) {
