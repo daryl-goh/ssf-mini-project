@@ -131,7 +131,8 @@
 /* Services Section */
 
 .services {
-    padding-top: 10px;
+padding-top: 10px;
+text-align: center;
   }
 
 .services .box {
@@ -175,3 +176,108 @@ color: #fff;
 }
 
 /* End of Services Section  */
+
+/* Stock News Section */
+
+  .stocknews {
+  padding-top: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+    }
+  
+  .stocknews .box {
+  padding: 50px 30px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all ease-in-out 0.3s;
+  }
+  
+  .stocknews .box span {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ed5b5b;
+  }
+  
+  .stocknews .box h4 {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0;
+  margin: 20px 0;
+  color: #191919;
+  }
+  
+  .stocknews .box p {
+  color: #aaaaaa;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .stocknews .box:hover {
+  background: #3df173;
+  padding: 30px 30px 70px 30px;
+  box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+  }
+  
+  .stocknews .box:hover span,
+  .stocknews .box:hover h4,
+  .stocknews .box:hover p {
+  color: #fff;
+  }
+  
+  /* End of Stock News Section  */
+
+  /* Stock Price Section */
+
+    .stockprice {
+    padding-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      }
+    
+    .stockprice .box {
+    padding: 50px 30px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all ease-in-out 0.3s;
+    }
+    
+    .stockprice .box span {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ed5b5b;
+    }
+    
+    .stockprice .box h4 {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0;
+    margin: 20px 0;
+    color: #191919;
+    }
+    
+    .stockprice .box p {
+    color: #aaaaaa;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    }
+    
+    .stockprice .box:hover {
+    background: #3df173;
+    padding: 30px 30px 70px 30px;
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+    }
+    
+    .stockprice .box:hover span,
+    .stockprice .box:hover h4,
+    .stockprice .box:hover p {
+    color: #fff;
+    }
+    
+    /* End of Stock News Section  */
