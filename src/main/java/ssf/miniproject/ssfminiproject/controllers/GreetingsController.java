@@ -44,14 +44,14 @@ public class GreetingsController {
     //     return "updatename";
     // }
 
-    @PostMapping(path={"/"})
-    public String postGreetings(@RequestBody MultiValueMap<String, String> form, Model model) {
-        ValueOperations<String, String> ops = redisTemplate.opsForValue();
-        String text = form.getFirst("text");
-        ops.set("greetings", text);
-        model.addAttribute("hello", text);
-        return "index";
-    }
+    // @PostMapping(path={"/"})
+    // public String postGreetings(@RequestBody MultiValueMap<String, String> form, Model model) {
+    //     ValueOperations<String, String> ops = redisTemplate.opsForValue();
+    //     String text = form.getFirst("text");
+    //     ops.set("greetings", text);
+    //     model.addAttribute("hello", text);
+    //     return "index";
+    // }
 
 
     //About Us Page Controller    

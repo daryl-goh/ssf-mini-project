@@ -177,6 +177,15 @@ color: rgb(0, 0, 0);
 
 /* End of Services Section  */
 
+/* Contact Us Section */
+
+.contactus {
+  padding-top: 10px;
+  text-align: center;
+}
+
+/* End of Contact Us Section  */
+
 /* Stock News Section */
 
   .stocknews {
@@ -281,3 +290,5 @@ color: rgb(0, 0, 0);
     }
     
     /* End of Stock News Section  */
+
+    

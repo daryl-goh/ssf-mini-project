@@ -44,8 +44,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/login">Login</a>
           </li>
-        </ul>
+         </ul>
         
+       
         <form class="d-flex" role="search" method="GET" action="/stockprice2">
           <input class="form-control me-2" type="search" placeholder="Ticker Search" aria-label="Search" name="symbol" required>
           <button class="btn btn-outline-dark" type="submit">Search</button>
@@ -54,11 +55,12 @@
     </div>
   </nav>
 
-
-
+ 
     <div class="center"  style="margin-top: 20vh;"><form method="POST" action="/login2">
             
-                    
+        <div>Welcome back to Stockify
+            <h6 center data-th-text="${hello}">  </h6>  </div>   
+            <br>     
         <input type="text" name="text" size="15" placeholder="Username Here" required>
 
      <button type="submit">Login</button> 
