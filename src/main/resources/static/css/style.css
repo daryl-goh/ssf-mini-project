@@ -145,7 +145,7 @@ transition: all ease-in-out 0.3s;
 display: block;
 font-size: 28px;
 font-weight: 700;
-color: #ed5b5b;
+color: #000000;
 }
 
 .services .box h4 {
@@ -164,7 +164,7 @@ padding: 0;
 }
 
 .services .box:hover {
-background: #3df173;
+background: #ffffff;
 padding: 30px 30px 70px 30px;
 box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
 }
@@ -172,7 +172,7 @@ box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
 .services .box:hover span,
 .services .box:hover h4,
 .services .box:hover p {
-color: #fff;
+color: rgb(0, 0, 0);
 }
 
 /* End of Services Section  */
@@ -217,7 +217,7 @@ color: #fff;
   }
   
   .stocknews .box:hover {
-  background: #3df173;
+  background: #ffffff;
   padding: 30px 30px 70px 30px;
   box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
   }
@@ -225,7 +225,7 @@ color: #fff;
   .stocknews .box:hover span,
   .stocknews .box:hover h4,
   .stocknews .box:hover p {
-  color: #fff;
+  color: rgb(0, 0, 0);
   }
   
   /* End of Stock News Section  */
@@ -250,7 +250,7 @@ color: #fff;
     display: block;
     font-size: 28px;
     font-weight: 700;
-    color: #ed5b5b;
+    color: #000000;
     }
     
     .stockprice .box h4 {
@@ -269,7 +269,7 @@ color: #fff;
     }
     
     .stockprice .box:hover {
-    background: #3df173;
+    background: #ffffff;
     padding: 30px 30px 70px 30px;
     box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
     }
@@ -277,7 +277,7 @@ color: #fff;
     .stockprice .box:hover span,
     .stockprice .box:hover h4,
     .stockprice .box:hover p {
-    color: #fff;
+    color: rgb(0, 0, 0);
     }
     
     /* End of Stock News Section  */
