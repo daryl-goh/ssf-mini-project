@@ -54,8 +54,8 @@
 }
 
 #intro .btn-get-started:hover {
-  background: #3df173;
-  border-color: #3df173;
+  background: #4e855e;
+  border-color: #ffffff;
 }
 
 @media (min-width: 1024px) {
@@ -121,8 +121,8 @@
 }
 
 .mission .mission-btn:hover {
-  background: #cc1616;
-  border: 2px solid #cc1616;
+  background: #ca3e55;
+  border: 2px solid #ffffff;
 }
 
 /* End of Mission Section */

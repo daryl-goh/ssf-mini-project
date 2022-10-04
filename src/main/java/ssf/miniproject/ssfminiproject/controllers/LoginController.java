@@ -20,17 +20,17 @@ public class LoginController {
     @Qualifier("redislab")
     private RedisTemplate<String, String> redisTemplate;
 
-    //Update Name Page Controller
+    //Login Page Controller
     @GetMapping(path={"/login"})
     public String loginPrompt(Model model) {
         ValueOperations<String, String> ops = redisTemplate.opsForValue();
-        Object greetings = ops.get("greetings");
-        model.addAttribute("hello", greetings.toString());
+        Object login = ops.get("login");
+        model.addAttribute("hello", login.toString());
         return "login";
     }
 
     @PostMapping(path={"/login2"})
-    public String postGreetings(@RequestBody MultiValueMap<String, String> form, Model model) {
+    public String postLogin(@RequestBody MultiValueMap<String, String> form, Model model) {
         ValueOperations<String, String> ops = redisTemplate.opsForValue();
         String text = form.getFirst("text");
         ops.set("greetings", text);
