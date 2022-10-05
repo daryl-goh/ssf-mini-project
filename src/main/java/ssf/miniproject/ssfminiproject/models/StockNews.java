@@ -14,7 +14,15 @@ public class StockNews {
     private String site;
     private String text;
     private String url;
+    private String username;
 
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
     public String getSymbol() {
         return symbol;
     }

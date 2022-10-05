@@ -17,7 +17,7 @@ import ssf.miniproject.ssfminiproject.models.StockNews;
 import ssf.miniproject.ssfminiproject.services.StockService;
 
 @RestController
-@RequestMapping(path="/news", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path="/savednews", produces = MediaType.APPLICATION_JSON_VALUE)
 public class StockNewsRestController {
   @Autowired
   private StockService stockSvc;

@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import ssf.miniproject.ssfminiproject.models.StockNews;
+
 @Controller
 @RequestMapping(path={"/"})
 public class LoginController {
@@ -25,7 +27,8 @@ public class LoginController {
     public String loginPrompt(Model model) {
         ValueOperations<String, String> ops = redisTemplate.opsForValue();
         Object login = ops.get("login");
-        model.addAttribute("hello", login.toString());
+        // model.addAttribute("hello", login.toString());
+        model.addAttribute("stocknewsobject", new StockNews());
         return "login";
     }
 
@@ -37,5 +40,15 @@ public class LoginController {
         model.addAttribute("hello", text);
         return "login2";
     }
+
+    //Saved News Page Controller
+    // @PostMapping(path={"/savednews"})
+    // public String postLogin2(@RequestBody MultiValueMap<String, String> form, Model model) {
+    //     ValueOperations<String, String> ops = redisTemplate.opsForValue();
+    //     String text = form.getFirst("text");
+    //     ops.set("greetings", text);
+    //     model.addAttribute("hello", text);
+    //     return "savednews";
+    // }
     
 }

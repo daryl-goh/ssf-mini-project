@@ -56,14 +56,15 @@
   </nav>
 
  
-    <div class="center"  style="margin-top: 20vh;"><form method="POST" action="/login2">
+    <div class="center"  style="margin-top: 20vh;"><form method="POST" action="/savednews">
             
         <div>Welcome back to Stockify
-            <h6 center data-th-text="${hello}">  </h6>  </div>   
+            <h6 center data-th-text="${hello}">  </h6>  
+        </div>   
             <br>     
-        <input type="text" name="text" size="15" placeholder="Username Here" required>
+        <!-- <input type="text" name="text" size="15" placeholder="Username Here" required> -->
 
-     <button type="submit">Login</button> 
+     <button type="submit" name="symbol">View Saved News</button> 
 
 
 </form></div>

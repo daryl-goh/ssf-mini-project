@@ -67,7 +67,24 @@ public class StockNewsController {
                 } 
 
                 // Save News Page
-                @PostMapping(path={"/news"})
+
+                @GetMapping(path={"/savednews"})
+                public String savedStockNews(
+                    Model model, 
+                        HttpSession sess,
+                        @RequestParam(name="tickers", required = false) String tickers, 
+                        @RequestParam(name="limit", required = false, defaultValue = "5") Integer limit) {
+
+                        List<StockNews> stock = stockNewsSvc.getStockNews(tickers, limit);
+                        
+                        sess.setAttribute("stock", stock);
+                        model.addAttribute("stock", stock);
+
+                        return "savednews";
+                } 
+
+                
+                @PostMapping(path={"/savednews"})
                 public String saveStockNews(@RequestBody MultiValueMap<String, String> form,
                         Model model,
                         @RequestParam(name="tickers", required = false) String tickers , 
@@ -99,7 +116,7 @@ public class StockNewsController {
 
                         stockSvc.saveStock(newsToSave);
                         
-                        return "stocknews2";
+                        return "savednews";
                             
                         }
 
