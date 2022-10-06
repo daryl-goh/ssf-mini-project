@@ -35,9 +35,11 @@ public class LoginController {
     @PostMapping(path={"/login2"})
     public String postLogin(@RequestBody MultiValueMap<String, String> form, Model model) {
         ValueOperations<String, String> ops = redisTemplate.opsForValue();
-        String text = form.getFirst("text");
-        ops.set("greetings", text);
-        model.addAttribute("hello", text);
+        String username = form.getFirst("username");
+		String symbol = "TSLA";
+        ops.set(username, symbol);
+        model.addAttribute("username", username);
+        model.addAttribute("symbol", symbol);
         return "login2";
     }
 
