@@ -61,15 +61,15 @@
       
             
         <div>Welcome back to Stockify
-            <h6 center data-th-text="${username}">  </h6>  
+            <h6 id="intro" center data-th-text="${username}">  </h6>
             Here are your saved tickers:
             <h6 center data-th-text="${symbol}">  </h6>  
 
-            <br><br><br> <form method="POST" action="/login3">      
+            <br><br><br> <form method="POST" action="/login3">
               <input type="text" name="list" size="15" placeholder="Ticker Here" required>
-              <input type="hidden" name="username" value="${username}">
-              <button type="submit" name="symbol">Add Ticker</button> 
-              <button type="submit" name="symbol">Remove Ticker</button> </form>
+              <input th:type="hidden" th:name="username" th:value="${username}" />
+              <button type="submit" name="symbol" value="add">Add Ticker</button>
+              <button type="submit" name="symbol" value="remove">Remove Ticker</button> </form>
         </div>   
                       
        
