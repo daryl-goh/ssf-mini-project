@@ -23,8 +23,10 @@ public class StockPrice {
     private String website;
     private String sector;
     private String ceo;
+    private String image;
 
    
+    
     public String getSymbol() {
         return symbol;
     }
@@ -128,6 +130,14 @@ public class StockPrice {
     public void setCeo(String ceo) {
         this.ceo = ceo;
     }
+
+    public String getImage() {
+        return image;
+    }
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public static StockPrice create(JsonObject jo) {
         StockPrice sp = new StockPrice();
         sp.setSymbol(jo.getString("symbol"));
@@ -147,6 +157,7 @@ public class StockPrice {
         sp.setWebsite(jo.getString("website"));
         sp.setSector(jo.getString("sector"));
         sp.setCeo(jo.getString("ceo"));
+        sp.setImage(jo.getString("image"));
 
         return sp;
     }
@@ -170,6 +181,7 @@ public class StockPrice {
         .add("website", website)
         .add("sector", sector)
         .add("ceo", ceo)
+        .add("image", image)
         .build();
     }
 

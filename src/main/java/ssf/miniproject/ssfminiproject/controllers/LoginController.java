@@ -1,9 +1,8 @@
 package ssf.miniproject.ssfminiproject.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
@@ -12,15 +11,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import ssf.miniproject.ssfminiproject.models.StockNews;
+import ssf.miniproject.ssfminiproject.repositories.RedisRepository;
 
 @Controller
 @RequestMapping(path={"/"})
 public class LoginController {
 
+    // @Autowired
+    // @Qualifier("redislab")
+    // private RedisTemplate<String, String> template;
+
     @Autowired
-    @Qualifier("redislab")
-    private RedisTemplate<String, String> template;
+    private RedisRepository repository;
 
     //Login Page Controller
     @GetMapping(path={"/login"})
@@ -32,14 +34,45 @@ public class LoginController {
 	//Username Entered
     @PostMapping(path={"/login2"})
     public String postLogin(@RequestBody MultiValueMap<String, String> form, Model model) {
-        ValueOperations<String, String> ops = template.opsForValue();
+        
         String username = form.getFirst("username");
-		String symbol = "TSLA";
-        ops.set(username, symbol);
+        List<String> values = repository.get(username);
+
+		
+        
         model.addAttribute("username", username);
-        model.addAttribute("symbol", symbol);
+        model.addAttribute("symbol", values);
         return "login2";
     }
 
+    @PostMapping(path={"/login3"})
+    public String postLogin2(@RequestBody MultiValueMap<String, String> form, Model model) {
+        
+        String username = form.getFirst("username");
+        String value = form.getFirst("list");
+        
+        repository.add(username, value);
+		
+        model.addAttribute("username", username);
+        model.addAttribute("symbol", value);
+        return "login2";
+    }
+
+    
+    // @PostMapping(path={"/login2"})
+    // public String postLogin3(@RequestBody MultiValueMap<String, String> form, Model model) {
+        
+    //     String username = form.getFirst("username");
+    //     String value = form.getFirst("list");
+        
+    //     repository.remove(username, value);
+		
+    //     model.addAttribute("username", username);
+    //     model.addAttribute("symbol", value);
+    //     return "login2";
+    // }
+    
+
+    
 
 }
