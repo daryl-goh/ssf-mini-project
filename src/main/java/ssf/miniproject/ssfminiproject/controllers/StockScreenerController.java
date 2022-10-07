@@ -25,15 +25,6 @@ public class StockScreenerController {
     @Value("${welcome.message}")
     private String message;
 
-    // @GetMapping(value = { "/", "/home", "/index" })
-    // public String index(Model model, HttpSession sess) {
-
-    //     sess.setAttribute("message", message);
-    //     model.addAttribute("message", message);
-
-    //     return "index";
-    // }
-
     @GetMapping(value = { "/stockscreener1" })
     public String stocksearch(Model model, HttpSession sess) {
 

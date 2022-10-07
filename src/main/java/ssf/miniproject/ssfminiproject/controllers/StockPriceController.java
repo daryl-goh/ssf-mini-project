@@ -26,12 +26,6 @@ public class StockPriceController {
     @Value("${welcome.message}")
     private String message;
     
-    // @GetMapping(value = { "/", "/home", "/index" })
-    // public String index(Model model) {
-    //     model.addAttribute("message", message);
-
-    //     return "index";
-    // }
 
     @GetMapping(value = { "/stockprice1" })
     public String stocksearch(Model model, HttpSession sess) {

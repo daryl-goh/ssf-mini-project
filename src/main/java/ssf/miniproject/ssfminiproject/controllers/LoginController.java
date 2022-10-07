@@ -45,7 +45,7 @@ public class LoginController {
         return "redirect:/showData";
     }
 
-    @GetMapping(value = "/showData")
+    @GetMapping(path={"/showData"})
     public String showData(HttpServletRequest request, Model model) {
         String username;
         Map<String, ?> flashMap = RequestContextUtils.getInputFlashMap(request);
@@ -63,7 +63,7 @@ public class LoginController {
         return "login2";
     }
 
-    @PostMapping(value="/login3", params = "symbol=add")
+    @PostMapping(path={"/login3"}, params = "symbol=add")
     public RedirectView addTicker(@RequestBody MultiValueMap<String, String> form, RedirectAttributes redirectAttributes) {
 
         String username = form.getFirst("username");
@@ -74,7 +74,7 @@ public class LoginController {
         return new RedirectView("/showData", true);
     }
 
-    @PostMapping(value="/login3", params = "symbol=remove")
+    @PostMapping(path={"/login3"}, params = "symbol=remove")
     public RedirectView removeTicker(@RequestBody MultiValueMap<String, String> form, RedirectAttributes redirectAttributes) {
 
         String username = form.getFirst("username");

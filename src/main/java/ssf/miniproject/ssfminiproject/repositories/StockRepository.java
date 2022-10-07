@@ -33,16 +33,4 @@ public class StockRepository {
 		return Optional.of(StockNews.create(data));
 	}
 
-//   public Optional<String> getArticle(String symbol) {
-//     if (!redisTemplate.hasKey(symbol)){
-//         System.out.println("StockRepository - getNews - Unable to find key: " + symbol);
-//         return Optional.empty();
-//     }
-
-//     ValueOperations<String, String> valueOp = redisTemplate.opsForValue();
-//     String newsResult = valueOp.get(symbol);
-//     System.out.println("StockRepository - getNews - newsResult: " + newsResult);
-//     return Optional.of(newsResult);
-// }
-    
 }

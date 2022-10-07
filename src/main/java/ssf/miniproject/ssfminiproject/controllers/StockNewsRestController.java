@@ -37,40 +37,4 @@ public class StockNewsRestController {
 		return ResponseEntity.ok(article.toJson().toString());
 	}
 
-//    @GetMapping(value="/{symbol}", produces = MediaType.APPLICATION_JSON_VALUE)
-//     public ResponseEntity<String> getRollAsJson(@PathVariable("symbol") String symbol, Model model) {
-
-//         StockNews snResult = stockNewsSvc.getNewsBySymbol(symbol);
-
-//         if (snResult == null){
-//            JsonObject errResp = Json
-//                     .createObjectBuilder()
-//                     .add("error", "Cannot find news article %s".formatted(symbol))
-//                     .build();
-//             String payload = errResp.toString();
-//             // Return 400
-//             return ResponseEntity
-//                     //.status(HttpStatus.BAD_REQUEST)
-//                     .badRequest() //400
-//                     .body(payload);
-//         }
-
-//         // Create the response payload
-//         JsonObjectBuilder builder = Json
-//                 .createObjectBuilder()
-//                 .add("symbol", snResult.getSymbol())
-//                 .add("publishedDate", snResult.getPublishedDate())
-//                 .add("title", snResult.getTitle())
-//                 .add("image", snResult.getImage())
-//                 .add("site", snResult.getSite())
-//                 .add("text", snResult.getText())
-//                 .add("url", snResult.getUrl());
-             
-
-//         // Get the JsonObject object from JsonBuilder
-//         JsonObject resp = builder.build();
-
-//         return ResponseEntity.ok(resp.toString());
-//     }
-
 }
