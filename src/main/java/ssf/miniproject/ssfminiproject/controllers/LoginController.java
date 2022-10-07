@@ -20,21 +20,19 @@ public class LoginController {
 
     @Autowired
     @Qualifier("redislab")
-    private RedisTemplate<String, String> redisTemplate;
+    private RedisTemplate<String, String> template;
 
     //Login Page Controller
     @GetMapping(path={"/login"})
     public String loginPrompt(Model model) {
-        ValueOperations<String, String> ops = redisTemplate.opsForValue();
-        Object login = ops.get("login");
-        // model.addAttribute("hello", login.toString());
-        model.addAttribute("stocknewsobject", new StockNews());
+
         return "login";
     }
 
+	//Username Entered
     @PostMapping(path={"/login2"})
     public String postLogin(@RequestBody MultiValueMap<String, String> form, Model model) {
-        ValueOperations<String, String> ops = redisTemplate.opsForValue();
+        ValueOperations<String, String> ops = template.opsForValue();
         String username = form.getFirst("username");
 		String symbol = "TSLA";
         ops.set(username, symbol);
@@ -43,14 +41,5 @@ public class LoginController {
         return "login2";
     }
 
-    //Saved News Page Controller
-    // @PostMapping(path={"/savednews"})
-    // public String postLogin2(@RequestBody MultiValueMap<String, String> form, Model model) {
-    //     ValueOperations<String, String> ops = redisTemplate.opsForValue();
-    //     String text = form.getFirst("text");
-    //     ops.set("greetings", text);
-    //     model.addAttribute("hello", text);
-    //     return "savednews";
-    // }
-    
+
 }

@@ -18,7 +18,13 @@ public class StockPrice {
     private String currency;
     private String isin;
     private String exchangeShortName;
+    private String industry;
+    private String description;
+    private String website;
+    private String sector;
+    private String ceo;
 
+   
     public String getSymbol() {
         return symbol;
     }
@@ -92,6 +98,36 @@ public class StockPrice {
         this.exchangeShortName = exchangeShortName;
     }
 
+    public String getIndustry() {
+        return industry;
+    }
+    public void setIndustry(String industry) {
+        this.industry = industry;
+    }
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public String getWebsite() {
+        return website;
+    }
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+    public String getSector() {
+        return sector;
+    }
+    public void setSector(String sector) {
+        this.sector = sector;
+    }
+    public String getCeo() {
+        return ceo;
+    }
+    public void setCeo(String ceo) {
+        this.ceo = ceo;
+    }
     public static StockPrice create(JsonObject jo) {
         StockPrice sp = new StockPrice();
         sp.setSymbol(jo.getString("symbol"));
@@ -106,6 +142,11 @@ public class StockPrice {
         sp.setCurrency(jo.getString("currency"));
         sp.setIsin(jo.getString("isin"));
         sp.setExchangeShortName(jo.getString("exchangeShortName"));
+        sp.setIndustry(jo.getString("industry"));
+        sp.setDescription(jo.getString("description"));
+        sp.setWebsite(jo.getString("website"));
+        sp.setSector(jo.getString("sector"));
+        sp.setCeo(jo.getString("ceo"));
 
         return sp;
     }
@@ -124,6 +165,11 @@ public class StockPrice {
         .add("currency", currency)
         .add("isin", isin)
         .add("exchangeShortName", exchangeShortName)
+        .add("industry", industry)
+        .add("description", description)
+        .add("website", website)
+        .add("sector", sector)
+        .add("ceo", ceo)
         .build();
     }
 

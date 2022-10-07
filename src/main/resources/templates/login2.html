@@ -56,20 +56,25 @@
   </nav>
 
  
-    <div class="center"  style="margin-top: 20vh;"><form method="POST" action="/savednews">
+    <div class="center"  style="margin-top: 20vh;">
+      
+      
             
         <div>Welcome back to Stockify
             <h6 center data-th-text="${username}">  </h6>  
             Here are your saved tickers:
             <h6 center data-th-text="${symbol}">  </h6>  
+
+            <br><br><br> <form method="POST" action="/savednews">      
+              <input type="text" name="text" size="15" placeholder="Ticker Here" required>
+              <button type="submit" name="symbol">Add Ticker</button> 
+              <button type="submit" name="symbol">Remove Ticker</button> </form>
         </div>   
-            <br>     
-        <!-- <input type="text" name="text" size="15" placeholder="Username Here" required> -->
+                      
+       
+     
 
-     <button type="submit" name="symbol">View Saved News</button> 
-
-
-</form></div>
+</div>
 
 </body>
 </html>
