@@ -6,15 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>Stock Screener</title>
-    <style>
-        .center {
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
-</head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+ </head>
 <body>
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
@@ -42,13 +35,13 @@
             <a class="nav-link" href="/#contactus">Contact Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/login">Tracker</a>
           </li>
         </ul>
         
         <form class="d-flex" role="search" method="GET" action="/stockprice2">
           <input class="form-control me-2" type="search" placeholder="Ticker Search" aria-label="Search" name="symbol" required>
-          <button class="btn btn-outline-dark" type="submit">Search</button>
+          <button class="btn-login" type="submit">Search</button>
         </form>
       </div>
     </div>
@@ -56,11 +49,11 @@
 
 
 
-    <div class="center" style="margin-top: 10vh;">
+    <div class="stockscreener"  style="margin-top: 10vh;">
         <h1> Stock Screener </h1>
     </div>
     <br>
-    <form class="center" method="GET" action="/stockscreener2">
+    <form class="stockscreener" method="GET" action="/stockscreener2">
    <div>
      <form class="row g-3">
 
@@ -84,32 +77,33 @@
               <label for="floatingInputGrid">Price Below</label>
           </div>
         </div>
-          <br>
-          <!-- <div class="row g-2">
-            <div class="col-md form-floating">
+         
+          <div class="row g-2">
+            <!-- <div class="col-md form-floating">
               <label for="betaMoreThan" class="form-label"></label>
               <input type="text" class="form-control" name="betaMoreThan">
               <label for="floatingInputGrid">Beta Above</label>
             </div>
+            
             <div class="col-md form-floating">
               <label for="betaLowerThan" class="form-label"></label>
               <input type="text" class="form-control" name="betaLowerThan">
               <label for="floatingInputGrid">Beta Below</label>
+            </div> -->
             </div>
-            </div>
-            <br> -->
-          <div class="row g-2">
+            
+          <!-- <div class="row g-2">
             <div class="col-md form-floating">
                 <label for="dividendMoreThan" class="form-label"></label>
                 <input type="text" class="form-control" name="dividendMoreThan">
                 <label for="floatingInputGrid">Dividend Above</label>
-            </div>
-            <div class="col-md form-floating">
+            </div> -->
+            <!-- <div class="col-md form-floating">
                 <label for="dividendLowerThan" class="form-label"> </label>
                 <input type="text" class="form-control" name="dividendLowerThan">
                 <label for="floatingInputGrid">Dividend Below</label>
             </div>
-          </div>
+          </div> -->
           <br>
 
           <div class="row g-2">

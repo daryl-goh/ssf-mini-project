@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class RedisRepository {
 
-    private RedisTemplate redislab;
+    private RedisTemplate<String, String> redislab;
 
     public RedisRepository(RedisTemplate redisTemplate) {
         this.redislab = redisTemplate;
@@ -22,9 +22,9 @@ public class RedisRepository {
         return redislab.opsForList().range(key.toUpperCase(), 0, -1);
     }
 
-    public boolean delete(final String key) {
-        return redislab.delete(key.toUpperCase());
-    }
+    // public boolean delete(final String key) {
+    //     return redislab.delete(key.toUpperCase());
+    // }
 
     public boolean remove(final String key, final String value) {
         Long count = redislab.opsForList().remove(key.toUpperCase(), -1, value);

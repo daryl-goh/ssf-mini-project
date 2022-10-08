@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.support.RequestContextUtils;
 import org.springframework.web.servlet.view.RedirectView;
@@ -36,7 +35,7 @@ public class LoginController {
         return "login";
     }
 
-	//Username Entered
+	//After Username Entered
     @PostMapping(path={"/login2"})
     public String postLogin(@RequestBody MultiValueMap<String, String> form, Model model, RedirectAttributes redirectAttributes) {
 
@@ -54,6 +53,7 @@ public class LoginController {
         List<String> values = repository.get(username);
 
         String symbol = "No data available";
+
         if (values != null && values.size() > 0) {
             symbol = values.stream().collect(
                     Collectors.joining(", "));

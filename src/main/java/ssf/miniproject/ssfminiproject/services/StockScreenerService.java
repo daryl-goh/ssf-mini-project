@@ -26,8 +26,8 @@ public class StockScreenerService {
     @Value("${API_KEY}")
     private String apikey;
 
-    public List<StockScreener> getStock(String limit, String priceMoreThan, String priceLowerThan, String dividendMoreThan, 
-    String dividendLowerThan, String volumeMoreThan, String volumeLowerThan, String country, String exchange) {
+    public List<StockScreener> getStock(String limit, String priceMoreThan, String priceLowerThan, String volumeMoreThan, 
+    String volumeLowerThan,String country, String exchange) {
         String payload;
 
         String url = UriComponentsBuilder.fromUriString(URL)
@@ -36,8 +36,8 @@ public class StockScreenerService {
             .queryParam("priceLowerThan", priceLowerThan)
             // .queryParam("betaMoreThan ", betaMoreThan )
             // .queryParam("betaLowerThan ", betaLowerThan )
-            .queryParam("dividendMoreThan ", dividendMoreThan )
-            .queryParam("dividendLowerThan ", dividendLowerThan )
+            // .queryParam("dividendMoreThan ", dividendMoreThan )
+            // .queryParam("dividendLowerThan ", dividendLowerThan )
             .queryParam("volumeMoreThan", volumeMoreThan)
             .queryParam("volumeLowerThan", volumeLowerThan)
             .queryParam("country", country)

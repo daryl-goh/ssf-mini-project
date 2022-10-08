@@ -51,7 +51,7 @@ public class StockNewsController {
                     Model model, 
                     HttpSession sess,
                     @RequestParam(name="tickers", required = false) String tickers, 
-                    @RequestParam(name="limit", required = false, defaultValue = "5") Integer limit) {
+                    @RequestParam(name="limit", required = false, defaultValue = "7") Integer limit) {
 
                     List<StockNews> stock = stockNewsSvc.getStockNews(tickers, limit);
                     
@@ -68,7 +68,7 @@ public class StockNewsController {
                 Model model, 
                     HttpSession sess,
                     @RequestParam(name="tickers", required = false) String tickers, 
-                    @RequestParam(name="limit", required = false, defaultValue = "5") Integer limit) {
+                    @RequestParam(name="limit", required = false, defaultValue = "7") Integer limit) {
 
                     List<StockNews> stock = stockNewsSvc.getStockNews(tickers, limit);
                     

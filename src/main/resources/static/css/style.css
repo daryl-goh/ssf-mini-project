@@ -186,6 +186,59 @@ color: rgb(0, 0, 0);
 
 /* End of Contact Us Section  */
 
+/* Stock Screener Section */
+
+  .stockscreener {
+  padding-top: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+    }
+  
+  .stockscreener .box {
+  padding: 50px 30px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all ease-in-out 0.3s;
+  }
+  
+  .stockscreener .box span {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ed5b5b;
+  }
+  
+  .stockscreener .box h4 {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0;
+  margin: 20px 0;
+  color: #191919;
+  }
+  
+  .stockscreener .box p {
+  color: #aaaaaa;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .stockscreener .box:hover {
+  background: #ffffff;
+  padding: 30px 30px 70px 30px;
+  box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+  }
+  
+  .stockscreener .box:hover span,
+  .stockscreener .box:hover h4,
+  .stockscreener .box:hover p {
+  color: rgb(0, 0, 0);
+  }
+  
+/* End of Stock Screener Section  */
+
 /* Stock News Section */
 
   .stocknews {
@@ -239,6 +292,7 @@ color: rgb(0, 0, 0);
   
   /* End of Stock News Section  */
 
+
   /* Stock Price Section */
 
     .stockprice {
@@ -247,7 +301,7 @@ color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
-      }
+    }
     
     .stockprice .box {
     padding: 50px 30px;
@@ -289,6 +343,46 @@ color: rgb(0, 0, 0);
     color: rgb(0, 0, 0);
     }
     
-    /* End of Stock News Section  */
+    /* End of Stock Price Section  */
+
+    /* Login Section */
+
+      .login {
+      padding-top: 10px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+        }
+
+      #login .btn-login .btn-add .btn-remove {
+        font-family: "Raleway", sans-serif;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        display: inline-block;
+        padding: 5px 30px;
+        transition: 0.5s;
+        border: 0.5px solid rgb(250, 250, 250);
+        color: rgb(77, 76, 76);
+      }
+      
+      #login .btn-login:hover {
+        background: #84a1b4;
+        border-color: #ffffff;
+      }
+
+      #login .btn-add:hover {
+        background: #4e855e;
+        border-color: #ffffff;
+      }
+
+      #login .btn-remove:hover {
+        background: #ca3e55;
+        border-color: #ffffff;
+      }
+        
+      /* End of Login Section  */
 
     
