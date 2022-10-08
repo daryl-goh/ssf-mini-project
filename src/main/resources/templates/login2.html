@@ -48,8 +48,16 @@
     </div>
   </nav>
 
- 
-    <div class="login" id="login" style="margin-top: 20vh;">
+  <div class="text-center stockprice"  style="margin-top: 10vh;">
+    <h1 class="display-6">Ticker Tracker</h1>
+    </div>
+
+    <div class="text-center stockprice">
+      <a href="#">
+        <img src="/images/Stockify.png" alt="" width="170" height="170">
+      </a>
+      </div>
+    <div class="login" id="login">
       
       
             
@@ -65,11 +73,18 @@
               <input th:type="hidden" th:name="username" th:value="${username}" />
               <br><br>
               <button class="btn-add" type="submit" name="symbol" value="add">Add Ticker</button>
-              <button class="btn-remove" type="submit" name="symbol" value="remove">Remove Ticker</button> </form>
-        </div>   
+              <button class="btn-remove" type="submit" name="symbol" value="remove">Remove Ticker</button> 
                       
-       
+            </form>
+
+            <div class="login" id="login"  style="margin-top: 10vh;">
      
+              <form method="GET" action="/login">
+            
+                <button class="btn-login" type="submit">Logout</button> 
+            </div>   
+                      
+
 
 </div>
 

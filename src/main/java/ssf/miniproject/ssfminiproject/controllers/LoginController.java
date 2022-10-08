@@ -28,12 +28,16 @@ public class LoginController {
     @Autowired
     private RedisRepository repository;
 
-    //Login Page Controller
+    //Login Controller
     @GetMapping(path={"/login"})
     public String loginPrompt(Model model) {
 
         return "login";
     }
+
+
+
+
 
 	//After Username Entered
     @PostMapping(path={"/login2"})
