@@ -21,9 +21,6 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping(path={"/"})
 public class LoginController {
 
-    // @Autowired
-    // @Qualifier("redislab")
-    // private RedisTemplate<String, String> template;
 
     @Autowired
     private RedisRepository repository;
