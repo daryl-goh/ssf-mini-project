@@ -4,13 +4,13 @@
 
 ## Spring Boot
 Must handle HTTP POST and GET request
-Must include parameterized routes (@PathVariable)
-Must include both MVC (@Controller) and REST endpoints
+ <br />Must include parameterized routes (@PathVariable)
+ <br />Must include both MVC (@Controller) and REST endpoints
 (@RestController)
-POST must consume either form-urlencoded or JSON
+ <br />POST must consume either form-urlencoded or JSON
 payload
-Must support more than 1 user
-Must include a minimum of 3 views not including REST
+ <br />Must support more than 1 user
+ <br />Must include a minimum of 3 views not including REST
 endpoints
 
 ## RESTful API
