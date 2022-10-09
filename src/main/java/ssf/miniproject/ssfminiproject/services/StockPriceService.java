@@ -24,6 +24,7 @@ public class StockPriceService {
     @Value("${API_KEY}")
     private String apikey;
 
+    // Stock Price Checker Page
     public List<JsonObject> getStockPrice(String symbol) {
         String payload;
 

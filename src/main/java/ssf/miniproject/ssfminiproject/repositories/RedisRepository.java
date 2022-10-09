@@ -2,12 +2,16 @@ package ssf.miniproject.ssfminiproject.repositories;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class RedisRepository {
 
+    @Autowired
+    @Qualifier("redislab")
     private RedisTemplate<String, String> redislab;
 
     public RedisRepository(RedisTemplate redisTemplate) {

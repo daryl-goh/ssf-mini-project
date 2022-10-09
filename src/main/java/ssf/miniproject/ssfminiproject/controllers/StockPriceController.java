@@ -34,7 +34,8 @@ public class StockPriceController {
 
         return "stockprice1";
     }
-
+    
+    // Stock Price Checker Page
     @GetMapping(path={"/stockprice2"})
     public String getStockNews(
             Model model, 

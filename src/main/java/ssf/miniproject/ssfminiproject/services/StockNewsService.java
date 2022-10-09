@@ -26,6 +26,7 @@ public class StockNewsService {
     @Value("${API_KEY}")
     private String apikey;
 
+    // Latest News of the Day Page and Save News Page
     public List<StockNews> getStockNews(String tickers, Integer limit) {
         String payload;
 
@@ -59,6 +60,7 @@ public class StockNewsService {
             return list;
     }
 
+    // Search News By Ticker Page
     public List<StockNews> getStockNews2(String tickers, Integer limit) {
         String payload;
 

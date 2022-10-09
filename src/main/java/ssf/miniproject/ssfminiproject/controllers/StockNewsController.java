@@ -45,7 +45,7 @@ public class StockNewsController {
                 return "stocknews1";
             }
             
-            // News of the Day Page
+            // Latest News of the Day Page
             @GetMapping(path={"/stocknews2"})
                 public String getStockNews(
                     Model model, 
@@ -62,10 +62,9 @@ public class StockNewsController {
             } 
 
             // Save News Page
-
             @GetMapping(path={"/savednews"})
             public String savedStockNews(
-                Model model, 
+                    Model model, 
                     HttpSession sess,
                     @RequestParam(name="tickers", required = false) String tickers, 
                     @RequestParam(name="limit", required = false, defaultValue = "10") Integer limit) {
@@ -83,7 +82,7 @@ public class StockNewsController {
             public String saveStockNews(@RequestBody MultiValueMap<String, String> form,
                     Model model,
                     @RequestParam(name="tickers", required = false) String tickers , 
-                    @RequestParam(name="limit", required = false, defaultValue ="5") Integer limit) {
+                    @RequestParam(name="limit", required = false, defaultValue ="10") Integer limit) {
 
                     List<StockNews> stock = stockNewsSvc.getStockNews(tickers, limit);
                     
@@ -103,7 +102,6 @@ public class StockNewsController {
                         for (StockNews sp: stock) {
                             
                                 newsToSave.add(sp);
-                            
                         }
                     }
                                     
@@ -115,7 +113,7 @@ public class StockNewsController {
                         
                     }
 
-            // Search News By Ticker
+            // Search News By Ticker Page
             @GetMapping(path={"/stocknews3"})
             public String getStockNews2(
                 Model model, 

@@ -32,10 +32,6 @@ public class LoginController {
         return "login";
     }
 
-
-
-
-
 	//After Username Entered
     @PostMapping(path={"/login2"})
     public String postLogin(@RequestBody MultiValueMap<String, String> form, Model model, RedirectAttributes redirectAttributes) {
@@ -64,6 +60,7 @@ public class LoginController {
         return "login2";
     }
 
+    // Add Ticker
     @PostMapping(path={"/login3"}, params = "symbol=add")
     public RedirectView addTicker(@RequestBody MultiValueMap<String, String> form, RedirectAttributes redirectAttributes) {
 
@@ -75,6 +72,7 @@ public class LoginController {
         return new RedirectView("/showData", true);
     }
 
+    // Remove Ticker
     @PostMapping(path={"/login3"}, params = "symbol=remove")
     public RedirectView removeTicker(@RequestBody MultiValueMap<String, String> form, RedirectAttributes redirectAttributes) {
 
