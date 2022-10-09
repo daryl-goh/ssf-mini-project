@@ -1,5 +1,5 @@
-# ssf-mini-project
-# Server Side Foundation Mini Project - Stockify
+## ssf-mini-project
+## Server Side Foundation Mini Project - Stockify
 
 
 ## Spring Boot
