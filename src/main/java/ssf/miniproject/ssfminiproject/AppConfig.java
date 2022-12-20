@@ -51,7 +51,7 @@ public class AppConfig {
     redisTemplate.setKeySerializer(new StringRedisSerializer());
     redisTemplate.setValueSerializer(new StringRedisSerializer());
 
-    System.out.println(">>>> running inRedisTemplate");
+    System.out.println(">>>> running in RedisTemplate");
     return redisTemplate;
   }
 
